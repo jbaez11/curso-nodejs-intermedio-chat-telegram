@@ -42,6 +42,7 @@ router.post('/message', function(req,res){
 //     res.send('Hola');
 // });
 
+app.use('/app', express.static('public'));
 app.listen(3000);
 
 console.log('la aplicacion esta escuchando en el puerto 3000');
