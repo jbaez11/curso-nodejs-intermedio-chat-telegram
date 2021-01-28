@@ -16,14 +16,18 @@ router.get('/message', function(req,res){
     res.send('Lista de mensajes');
 });
 
-router.post('/message', function(req,res){
-    res.send('Mensaje Añadido');
+router.delete('/message', function(req,res){
+    res.send('Mensaje eliminado');
 });
 
-router.delete('/message', function(req,res){
+router.post('/message', function(req,res){
     console.log(req.query);
     console.log(req.body);
-    res.send('Mensaje ' + req.body.text + 'añadido correctamente');
+    res.status(201).send({
+        error: '',
+        body: 'Creado correctamente'
+    });
+    //res.send('Mensaje ' + req.body.text + 'añadido correctamente');
 });
 // app.use('/', function(req, res){
 //     res.send('Hola');
