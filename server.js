@@ -26,7 +26,7 @@ router.delete('/message', function(req,res){
 router.post('/message', function(req,res){
     console.log(req.query);
     if(req.query.error =='ok'){
-        response.error(req,res, 'Mensaje NO creado correctamente', 400);
+        response.error(req,res, 'Error inesperado', 500, 'Es solo una simulacion de un error');
     }else{
          response.success(req,res, 'Mensaje creado correctamente', 201);
     }
