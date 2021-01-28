@@ -1,0 +1,19 @@
+{
+  "name": "backendnode",
+  "version": "1.0.0",
+  "description": "un chat tipo telegram",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chat",
+    "telegram",
+    "server"
+  ],
+  "author": "Jonathan Baez",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
