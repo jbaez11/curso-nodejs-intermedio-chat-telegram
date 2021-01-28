@@ -1,9 +1,12 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const router = express.Router();
 
-var app = express();
+ var app = express();
+ app.use(bodyParser.json());
+ app.use(bodyParser.urlencoded({ extended: true }));
+ app.use(router);
 
-app.use(router);
 
 router.get('/message', function(req,res){
     res.send('Lista de mensajes');
@@ -14,7 +17,9 @@ router.post('/message', function(req,res){
 });
 
 router.delete('/message', function(req,res){
-    res.send('Mensaje Borrado');
+    console.log(req.query);
+    console.log(req.body);
+    res.send('Mensaje ' + req.body.text + 'añadido correctamente');
 });
 // app.use('/', function(req, res){
 //     res.send('Hola');
