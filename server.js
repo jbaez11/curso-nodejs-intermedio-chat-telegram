@@ -9,6 +9,10 @@ const router = express.Router();
 
 
 router.get('/message', function(req,res){
+    console.log(req.headers) ;
+    res.header({
+        "custom-header":"nuestro valor personalizado"
+    })
     res.send('Lista de mensajes');
 });
 
