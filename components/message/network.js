@@ -4,18 +4,16 @@ const controller = require('./controller');
 const router = express.Router();
 
 router.get('/', function(req,res){
-    console.log(req.headers) ;
-    res.header({
-        "custom-header":"nuestro valor personalizado"
+    controller.getMessage()
+    .then((messageList)=>{
+        response.success(req,res, messageList, 200);
     })
-    
-    response.success(req,res, 'Lista de mensajes');
+    .catch(e =>{
+        response.error(req, res, 'Unexpected Error', 500 , e);
+    })
 });
 
-router.delete('/', function(req,res){
-    //res.send('Mensaje eliminado');
-    response.success(req,res, 'Mensaje eliminado');
-});
+
 
 router.post('/', function(req,res){
     
