@@ -47,12 +47,12 @@ function deleteMessage(id){
             return false;
         }
         store.remove(id)
-        .then(()=> {
-            resolve();
-        })
-        .catch(e =>{
-            reject(e)
-        })
+            .then(() => {
+                resolve();
+            })
+            .catch(e =>{
+                reject(e);
+            })
     });
 }
 

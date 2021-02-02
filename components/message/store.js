@@ -38,7 +38,7 @@ async function updateText(id, message){
 }
 
 function removeMessage(id){
-    Model.deleteOne({
+    return Model.deleteOne({
         _id:id
     });
 }
